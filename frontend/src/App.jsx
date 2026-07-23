@@ -21,6 +21,7 @@ import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import PageTransition from "./components/PageTransition.jsx";
 import ShareRoutine from "./pages/ShareRoutine.jsx";
 import DailyJournal from "./pages/DailyJournal.jsx";
+import ForgeMode from "./pages/ForgeMode.jsx";
 
 const AuthLayout = ({ children }) => (
   <div className="min-h-[calc(100vh-3.75rem)] flex items-center justify-center">
@@ -166,104 +167,7 @@ const App = () => {
     <BrowserRouter>
       <Navbar />
       <main className="app-bg min-h-screen pt-24 sm:pt-28 flex flex-col text-main transition-colors duration-300">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <PublicRoute>
-                <AuthLayout>
-                  <Login />
-                </AuthLayout>
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <PublicRoute>
-                <AuthLayout>
-                  <Login />
-                </AuthLayout>
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="/signup"
-            element={
-              <PublicRoute>
-                <AuthLayout>
-                  <Signup />
-                </AuthLayout>
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <AuthLayout>
-                <About />
-              </AuthLayout>
-            }
-          />
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoutes>
-                <Dashboard />
-              </ProtectedRoutes>
-            }
-          />
-          <Route
-            path="/tasks"
-            element={
-              <ProtectedRoutes>
-                <Tasks />
-              </ProtectedRoutes>
-            }
-          />
-          <Route
-            path="/routine-builder"
-            element={
-              <ProtectedRoutes>
-                <RoutineBuilder />
-              </ProtectedRoutes>
-            }
-          />
-          <Route
-            path="/focus-mode"
-            element={
-              <ProtectedRoutes>
-                <Pomodoro />
-              </ProtectedRoutes>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <ProtectedRoutes>
-                <Profile />
-              </ProtectedRoutes>
-            }
-          />
-          <Route
-            path="/analytics"
-            element={
-              <ProtectedRoutes>
-                <Analytics />
-              </ProtectedRoutes>
-            }
-          />
-          <Route
-            path="/daily-journal"
-            element={
-              <ProtectedRoutes>
-                <DailyJournal />
-              </ProtectedRoutes>
-            }
-          />
-          <Route path="/share/routine/:id" element={<ShareRoutine />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AnimatedRoutes />
       </main>
       <Footer />
       <ScrollToTop />
