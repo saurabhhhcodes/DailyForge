@@ -315,7 +315,7 @@ export default function Profile() {
                 />
               ) : (
                 <span className="transition-opacity duration-300 group-hover:opacity-70">
-                  {user?.name?.charAt(0).toUpperCase()}
+                  {user?.name?[0].toUpperCase()}
                 </span>
               )}
               <div className="absolute inset-0 flex items-center justify-center bg-black/80 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
