@@ -415,3 +415,5 @@ export const bulkDeleteTasks = async (req, res) => {
     });
   }
 };
+
+.catch(err => console.error("Promise.all failed:", err));
