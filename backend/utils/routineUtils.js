@@ -22,7 +22,7 @@ export const calculateBurnoutScore = (
 
      const missedRatio = missedDays / totalDays;
 
-    let burnoutScore = Math.round(missedRatio * 100);
+    let burnoutScore = Math.round(missedRatio * 100 + Number.EPSILON);
 
      if (burnoutScore > 100) {
       burnoutScore = 100;
