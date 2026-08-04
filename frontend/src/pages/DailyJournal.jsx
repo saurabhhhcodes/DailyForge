@@ -404,7 +404,7 @@ export default function DailyJournal() {
       return {
         key,
         count,
-        percent: Math.round(percentage * 100),
+        percent: Math.round(percentage * 100 + Number.EPSILON),
         strokeDash,
         strokeOffset,
         color: moodColors[key] || "#94a3b8"
