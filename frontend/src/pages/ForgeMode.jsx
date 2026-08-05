@@ -155,7 +155,7 @@ export default function ForgeMode() {
   useEffect(() => {
     if (audioRef.current) {
       if (isRunning && !sessionCompleted) {
-        audioRef.current.play().catch(() => {});
+        audioRef.current.play().catch( => console.error());
       } else {
         audioRef.current.pause();
       }
