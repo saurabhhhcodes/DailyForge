@@ -161,7 +161,7 @@ export function generateRealYearlyData(tasks = [], routineTasks = []) {
       let tDateStr = "";
       try {
         const d = new Date(dateToUse);
-        if (!isNaN(d.getTime())) {
+        if (!Number.isNaN(d.getTime())) {
           // If the original dateToUse is a plain date string "YYYY-MM-DD", preserve it exactly
           if (typeof dateToUse === "string" && /^\d{4}-\d{2}-\d{2}$/.test(dateToUse.trim())) {
             tDateStr = dateToUse.trim();
