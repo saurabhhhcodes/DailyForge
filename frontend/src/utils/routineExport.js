@@ -109,7 +109,7 @@ export const exportRoutineToPDF = async (routine, tasksList) => {
     }
   });
 
-  container.innerHTML = `
+  container.textContent = `
     <div style="border-bottom: 3px solid #4eb7b3; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center;">
       <div>
         <h1 style="margin: 0; font-size: 28px; font-weight: 800; color: #3b8ea0; letter-spacing: -0.02em;">DailyForge</h1>
