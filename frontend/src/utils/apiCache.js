@@ -24,7 +24,7 @@ const pending = new Map(); // key -> Promise (in-flight de-duplication)
 const buildKey = (url, params) => {
   if (!params) return url;
   const query = Object.keys(params)
-    .sort()
+    .sort((a, b) => a - b)
     .map((k) => `${k}=${params[k]}`)
     .join("&");
   return query ? `${url}?${query}` : url;
