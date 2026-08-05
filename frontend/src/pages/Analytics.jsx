@@ -169,7 +169,7 @@ export default function Analytics() {
     catCumulative -= strokeDash;
     return {
       ...cat,
-      percentage: Math.round(percentage * 100),
+      percentage: Math.round(percentage * 100 + Number.EPSILON),
       strokeDash,
       strokeOffset,
       color: colors[idx % colors.length],
