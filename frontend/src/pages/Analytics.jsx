@@ -220,7 +220,7 @@ export default function Analytics() {
     : "";
 
   const trendAreaD = trendPoints.length
-    ? `${trendPathD} L ${trendPoints[trendPoints.length - 1].x} 200 L ${trendPoints[0].x} 200 Z`
+    ? `${trendPathD} L ${trendPoints.at(-1).x} 200 L ${trendPoints[0].x} 200 Z`
     : "";
 
   return (
