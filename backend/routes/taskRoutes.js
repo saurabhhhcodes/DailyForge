@@ -36,7 +36,7 @@ const taskValidationRules = [
     .isIn(["daily", "weekly", "monthly", null]),
   body("recurrence.days").optional().isArray(),
   body("recurrence.monthDay").optional().custom((val) => val === null || (Number.isInteger(val) && val >= 1 && val <= 31)),
-  body("recurrence.endDate").optional().custom((val) => val === null || !isNaN(Date.parse(val))),
+  body("recurrence.endDate").optional().custom((val) => val === null || !Number.isNaN(Date.parse(val))),
 ];
 
 // Partial updates (e.g. status toggle) — only validate fields that are sent
